@@ -1,0 +1,385 @@
+body{
+  overflow-y: hidden;
+}
+.glowing {
+  box-shadow: 0 0 20px #3b96f0, 0 0 40px #74d4f0, 0 0 60px #daedef;
+}
+
+.glowing-controls {
+  box-shadow: 0 0 20px #00ffea, 0 0 40px #00ffea, 0 0 60px #00ffea;
+}
+
+.character-sprite {
+  animation: character-idle 2s infinite;
+}
+
+.overlay-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.play_now {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+.retro-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', sans-serif; /* Use a pixel font */
+  font-size: 16px;
+  color: #00ffcc;
+  text-decoration: none;
+  border: 2px solid #00ffcc;
+  background: linear-gradient(145deg, #000000, #0d0d0d);
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc inset;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.retro-btn:hover {
+  color: #ff0099;
+  border-color: #ff0099;
+  box-shadow: 0 0 15px #ff0099, 0 0 25px #ff0099 inset;
+  transform: scale(1.1);
+}
+
+.time-up {
+  text-align: center;
+  font-size: 1.5em;
+  color: #ffcc33;
+}
+
+.arcade-text {
+  font-family: 'Press Start 2P', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px #ff477e, -2px -2px 0px #33ccff;
+}
+
+.ComSoon {
+  text-align: center;
+  font-size: 2em;
+  color: #33ccff;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.landing-sign-in {
+  font-family: 'Press Start 2P', sans-serif;
+  color: #ffffff;
+  background: #1a1a1a;
+  border: 2px solid #ff477e;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-shadow: 2px 2px 0px #ffcc33;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.landing-sign-in:hover {
+  color: #ff477e;
+  background: #ffcc33;
+  box-shadow: 0px 0px 10px 3px #ff477e;
+}
+
+@keyframes character-idle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@font-face {
+  font-family: 'myFont';
+  src: url(/assets/operius-mono.ttf); 
+}
+.font-operius{
+  font-family: myFont;
+}
+
+
+@keyframes slowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+.speech-bubble {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: "PixelFont", sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Neon Buttons */
+.touch-controls {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 20px auto;
+  position: absolute;
+  bottom: 10%;
+}
+
+.control-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 24px;
+  font-family: "PixelFont", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+  transition: background-color 0.2s, box-shadow 0.5s;
+}
+
+.control-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.play-text {
+  font-size: 2rem; 
+  font-weight: 500; 
+  text-shadow: 
+    0 0 5px #d585ed, 
+    0 0 10px #d586eb, 
+    0 0 20px #e990eb; 
+  color: #00ffff; 
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.glowing {
+  box-shadow: 
+    0 0 15px #aaebeb, 
+    0 0 30px #95eff4, 
+    0 0 45px #8dd3ea; 
+  border: 2px solid #ff007f; 
+}
+
+.neonEffect:hover .play-text {
+  text-shadow: 
+    0 0 10px #0000ff, 
+    0 0 20px #1246b5, 
+    0 0 30px #ff007f;
+  color: #90e2eb;
+}
+
+
+.sign {
+
+  width: 50%;
+  height: 50%;
+ 
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  display: inline-block;
+
+  text-transform: uppercase;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #a6edf9, 0.2rem 0.1rem 1rem #99dff7,
+    0 -0.5rem 2rem #4daef8, 0 0.5rem 3rem #59e0e4;
+  animation: shine 2s forwards, flicker 2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #51e8ee, 0.2rem 0.1rem 1rem #aeedf7,
+      0 -0.5rem 2rem #5fd3ed, 0 0.5rem 3rem #acd4f8;
+  }
+  28%,
+  33% {
+    color: #c4dce9;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #cfd9e3;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+

@@ -1,0 +1,105 @@
+
+.footer{
+  display: flex;
+  margin-top: 35px;
+  padding-left: 30px;
+}
+.social-icon {
+  position: relative;
+  width: 3.5vw;
+  height: 3.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  box-shadow: 0 4px 0 #e8e4e4, 0 8px 10px rgb(253, 251, 251);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(233, 237, 240, 0.8);
+  margin: 1.7vw;
+}
+
+.social-icon:nth-child(1) {
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0.8);
+}
+
+.social-icon:nth-child(2) {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+.social-icon:nth-child(4) {
+  box-shadow: 0 0 15px rgba(0, 119, 181, 0.8);
+}
+
+.social-icon:nth-child(5) {
+  box-shadow: 0 0 15px rgba(225, 48, 108, 0.8);
+}
+
+/* Adjust image-specific styles within social-icon */
+.social-icon img {
+  width: 3vh; /* Fit the image within the container */
+  height: auto;
+  border-radius: 5px; /* Optional: match the rounding for consistency */
+}
+
+/* Hover effect */
+.social-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 0 #222, 0 12px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+.social-icon svg {
+  font-size: 32px;
+  color: #fff;
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: ripple-effect 0.6s ease-out;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  from {
+    opacity: 0.8;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3) translate(-50%, -50%);
+  }
+}
+@media (max-width: 800px) {
+ 
+
+  .social-icon{
+    width: 5vw;
+    height: 5vw;
+  }
+}
+@media (max-width: 600px) {
+ 
+
+  .social-icon{
+    width: 8vw;
+    height: 8vw;
+  }
+ 
+}
+@media (max-width: 370px) {
+ 
+
+  .social-icon{
+    width: 10vw;
+    height: 10vw;
+  }
+}
