@@ -1,0 +1,369 @@
+body{
+  overflow-y: auto;
+}
+.shop-container {
+    size:contain;
+  }
+  
+  .font-arcade {
+    font-family: "FlowerDisplay";
+    font-size: larger;
+    color:burlywood;
+  }
+  
+  .font-coins {
+    font-family: "OneSlice";
+    color: #b3e0e8;
+    text-shadow:
+      0 0 8px #7f00ff,
+      0 0 16px #00eaff;
+  }
+
+  .font-gen {
+    font-family: "Mahaputra";
+    font-size: larger;
+  }
+
+  .font-cd1 {
+    font-family: "cd1";
+    font-size: larger;
+  }
+
+  .font-cd2{
+    font-family: "cd2";
+    font-size: medium;
+    color: #ffae00
+  }
+
+  .text-neon-pink {
+    color: #ff00e6;
+    text-shadow: 0 0 8px #ff00e6, 0 0 16px #ff00e6, 0 0 24px #ff00e6;
+  }
+  
+  .text-neon-green {
+    color: #0aff99;
+    text-shadow: 0 0 8px #0aff99, 0 0 16px #0aff99, 0 0 24px #0aff99;
+  }
+  
+  .text-neon-yellow {
+    color: #0aa3e4;
+    /*text-shadow: 0 0 8px #fffb00, 0 0 16px #fffb00, 0 0 24px #fffb00;*/
+  }
+  
+  .flicker {
+    animation: flicker 1.5s infinite;
+    transform: scale(1.25)
+  }
+  
+  @font-face {
+    font-family: 'FlowerDisplay';
+    src: url("/assets/FlowerDisplay.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+
+  @font-face {
+    font-family: 'OneSlice';
+    src: url("/assets/OneSlice.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+
+  @font-face {
+    font-family: 'Mahaputra';
+    src: url("/assets/Mahaputra.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+  @font-face {
+    font-family: 'cd1';
+    src: url("/assets/cardhead1.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+
+   @font-face {
+    font-family: 'cd2';
+    src: url("/assets/card2.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+
+ /* ---------- ENTRANCE: Multiverse Title ---------- */
+@keyframes multiverseTitle {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(-20px);
+    filter: blur(10px);
+    text-shadow: none;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+    filter: blur(2px);
+    text-shadow:
+      0 0 8px #7f00ff,
+      0 0 16px #00eaff;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+    text-shadow:
+      0 0 6px #ff8800,
+      0 0 12px #dbe684,
+      0 0 24px rgba(216, 216, 177, 0.4);
+  }
+}
+
+  /* ---------- PERSISTENT: Reality Breathing ---------- */
+  @keyframes multiverseBreath {
+    0% {
+      transform: scale(1.5);
+      text-shadow:
+        0 0 6px #ff8800,
+        0 0 12px #dbe684;
+    }
+    50% {
+      transform: scale(1.75);
+      text-shadow:
+        0 0 12px #ff8800,
+        0 0 24px #dbe684,
+        0 0 36px rgba(255, 255, 255, 0.35);
+    }
+    100% {
+      transform: scale(1.5);
+      text-shadow:
+        0 0 6px #ff8800,
+        0 0 12px #dbe684;
+    }
+  }
+
+  /* ---------- COMBINED CLASS ---------- */
+  .multiverse-title {
+    animation:
+      multiverseTitle 1.4s cubic-bezier(0.25, 1, 0.5, 1) both,
+      multiverseBreath 5.5s ease-in-out infinite;
+    animation-delay: 0s, 1.5s; /* persistent starts AFTER entrance */
+  }
+
+  @keyframes flicker {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+  
+  .grid > div {
+  background: transparent;
+  overflow: visible;
+}
+
+.grid > div img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+  /*filter:
+    drop-shadow(0 0 8px #ffd54a)
+    drop-shadow(0 0 16px rgba(255,213,74,0.7));*/
+}
+
+/* Red / Asteroid */
+.glow-red {
+  filter:
+    drop-shadow(0 0 5px #ff3b3b)
+    drop-shadow(0 0 5px #ff3b3b)
+    drop-shadow(0 0 5px rgba(255,59,59,0.9));
+}
+
+/* Green / Planet */
+.glow-green {
+  filter:
+    drop-shadow(0 0 5px #00ff9c)
+    drop-shadow(0 0 5px #00ff9c)
+    drop-shadow(0 0 5px rgba(0,255,156,0.9));
+}
+
+/* Purple / Rift */
+.glow-purple {
+  filter:
+    drop-shadow(0 0 5px #a855f7)
+    drop-shadow(0 0 5px #a855f7)
+    drop-shadow(0 0 5px rgba(168,85,247,0.9));
+}
+
+.glow-blue {
+  filter:
+    drop-shadow(0 0 5px #1730ce)
+    drop-shadow(0 0 5px #1730ce)
+    drop-shadow(0 0 5px #1730ce);
+}
+
+.glow-white {
+  filter:
+    drop-shadow(0 0 5px #c1c3cf)
+    drop-shadow(0 0 5px #c1c3cf)
+    drop-shadow(0 0 5px #c1c3cf);
+}
+
+.glow-orange {
+  filter:
+    drop-shadow(0 0 5px #f39304)
+    drop-shadow(0 0 5px #f39304)
+    drop-shadow(0 0 5px #f39304);
+}
+
+/*.grid > div:hover img.glow-red{
+
+  filter:
+    drop-shadow(0 0 8px #ff3b3b)
+    drop-shadow(0 0 8px #ff3b3b)
+    drop-shadow(0 0 8px rgba(255,59,59,0.9));
+}
+
+.grid > div:hover img.glow-green{
+
+  filter:
+    drop-shadow(0 0 8px #00ff9c)
+    drop-shadow(0 0 8px #00ff9c)
+    drop-shadow(0 0 8px rgba(0,255,156,0.9));
+}
+
+.grid > div:hover img.glow-purple{
+ 
+  filter:
+    drop-shadow(0 0 8px #a855f7)
+    drop-shadow(0 0 8px #a855f7)
+    drop-shadow(0 0 8px rgba(168,85,247,0.9));
+}
+
+.grid > div:hover img{
+  transform: scale(1.1);
+}  */
+  
+.card-title-overlay {
+  font-family: 'FlowerDisplay', monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #facc15; /* yellow-400 */
+  text-align: center;
+
+  /* visual polish */
+  text-shadow:
+    0 0 8px rgba(250, 204, 21, 0.8),
+    0 0 16px rgba(250, 204, 21, 0.5);
+
+  /* POSITION CONTROL */
+  transform: translateY(40px); /* 🔑 moves title BELOW center */
+}
+/*
+@keyframes cosmic-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}*/
+@keyframes cosmic-float {
+  0%, 100% { --float-y: 0px; transform: translateY(0); }
+  50% { --float-y: -10px; transform: translateY(-10px); }
+}
+
+
+.card-float {
+  animation: cosmic-float 6s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 18px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 28px currentColor);
+  }
+}
+
+.card-glow {
+  animation: glow-pulse 3.5s ease-in-out infinite;
+}
+
+.card-hover {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* ===== MULTIVERSE GLITCH TITLE ===== */
+
+@keyframes multiverse-glitch {
+  0%, 92%, 100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  93% {
+    transform: translate(-1px, 0);
+    opacity: 0.9;
+  }
+
+  94% {
+    transform: translate(1px, 0);
+    opacity: 0.85;
+  }
+
+  95% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow-breathe {
+  0%, 100% {
+    text-shadow:
+      0 0 6px rgba(255, 230, 150, 0.9),
+      0 0 14px rgba(255, 200, 80, 0.6);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(255, 230, 150, 1),
+      0 0 22px rgba(255, 200, 80, 0.85);
+  }
+}
+
+.glow {
+  animation: glow-breathe 1s ease-in-out infinite;
+}
+
+.card-title-glitch {
+  position: relative;
+  color: #fde68a; /* warm cosmic yellow */
+  text-align: center;
+  letter-spacing: 0.08em;
+
+  /* animations */
+  animation:
+    multiverse-glitch 0.5s infinite,
+    glow-breathe 1s ease-in-out infinite;
+}
+
+.card-wrapper img {
+  transition: transform 0.35s ease, filter 0.35s ease;
+  will-change: transform, filter;
+}
+
+.card-wrapper:hover img {
+  transform: scale(1.12); /* scales the card */
+  filter: brightness(1.08) drop-shadow(0 0 18px #fde68a)
+          drop-shadow(0 0 28px #fde68a); /* initial glow */
+  animation: cosmic-float 6s ease-in-out infinite, glow-pulse 1s ease-in-out infinite;
+}
+/* remove .grid > div:hover img to avoid conflicts */
