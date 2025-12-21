@@ -4,6 +4,11 @@ import endpoints from "../../utils/APIendpoints";
 import { useNavigate } from "react-router-dom";
 import PowerUpShopView from "./PowerUpShopView";
 import "./PowerUpShop.css"; 
+<<<<<<< HEAD
+=======
+import FlowerDisplay from "/assets/FlowerDisplay.ttf";
+import bgps3 from "/assets/bgps3.jpg"
+>>>>>>> ishita2
 
 const PowerUpShop = () => {
   const [cards, setCards] = useState({ cardList: [], loaded: true });
@@ -77,6 +82,7 @@ const PowerUpShop = () => {
         <PowerUpShopView  card={card} refreshUpdateState={refreshUpdateState} />
       ))
     ) : (
+<<<<<<< HEAD
       <p className="text-white text-lg font-pixel text-center">No Power-Ups Available</p>
     );
 
@@ -87,6 +93,27 @@ const PowerUpShop = () => {
         Coins: <span className="text-neon-yellow">{userCoins}</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl justify-center items-center">
+=======
+      <p className="text-white text-lg font-gen text-center">No Power-Ups Available</p>
+    );
+
+  return (
+    <div
+          className="bg-dark-blue min-h-screen flex flex-col relative overlay"
+          style={{
+            backgroundImage: `url(${bgps3})`,
+            backgroundSize: "contain",
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+    
+      <h1 className="xl:text-15xl sm:text-6xl md:text-8xl lg:text-13xl multiverse-title mt-8 mb-10 font-arcade text-center">Power-Up Shop</h1>
+      <h2 className="xl:text-3xl sm:text-2xl md:text-3xl lg:text-3xl flicker font-coins text-center">
+        Coins: <span className="font-coins flicker">{userCoins}</span>
+      </h2>
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full justify-item-scenter px-8">
+>>>>>>> ishita2
         {cardItems}
       </div>
     </div>

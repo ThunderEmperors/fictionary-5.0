@@ -97,6 +97,10 @@ const PowerUps = () => {
       <PowerUpsViews
        key={index} 
        card={card} 
+<<<<<<< HEAD
+=======
+       //index={index}
+>>>>>>> ishita2
        refreshUpdateState={refreshUpdateState}
        onCardRedeemed={showCardRedeemedAlert} 
        />
@@ -104,7 +108,11 @@ const PowerUps = () => {
   } else {
     
     cardItems = (
+<<<<<<< HEAD
       <div className="text-center text-gray-400 font-expo text-xl mt-8">
+=======
+      <div className="text-center text-gray-400 font-gen text-xl mt-8">
+>>>>>>> ishita2
         You have no Power Cards right now. Check back later!
       </div>
     );
@@ -114,6 +122,7 @@ const PowerUps = () => {
   return (
     <>
     
+<<<<<<< HEAD
     <div className="bg-gradient-to-b from-blue-950 via-purple-950 to-black min-h-screen flex flex-col items-center p-8 ">
       <h1 className="text-3xl font-arcade text-yellow-400 mb-4 font-expo text-neon-yellow">
         PowerUps Available
@@ -122,6 +131,27 @@ const PowerUps = () => {
         {cardItems}
       </div>
     </div>
+=======
+    <div className="bg-gradient-to-b from-blue-950 via-purple-950 to-black min-h-screen flex flex-col p-8 ">
+      <h1 className="text-3xl text-yellow-400 mb-4 font-gen">
+        PowerUps Available
+      </h1>
+      <div className="flex-1 overflow-y-auto px-8 pb-20">
+    <div className="
+  grid 
+  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+  gap-8 
+  w-full 
+  px-8
+  items-start        
+  justify-items-center
+">
+      {cardItems}
+    </div></div>
+      
+    </div>
+    
+>>>>>>> ishita2
     <ToastContainer />
     </>
   );

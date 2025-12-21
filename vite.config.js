@@ -6,8 +6,13 @@ export default defineConfig({
   plugins: [react()],
   server: {
    headers: {
+<<<<<<< HEAD
       "Cross-Origin-Embedder-Policy": "unsafe-none",
       "Cross-Origin-Opener-Policy": "same-origin-allow-popups"
+=======
+      'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+      'Cross-Origin-Embedder-Policy': 'unsafe-none',
+>>>>>>> ishita2
     },
   },
   build: {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+=======
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+>>>>>>> ishita2
 
 .glow {
   text-shadow: 0 0 3px #dff48d, 0 0 6px #e9b8e9, 0 0 12px #f6ffa7, 0 0 24px #f6ec5a, 0 0 48px #f2ac33;
@@ -7,6 +11,7 @@
 .font-vt323 {
   font-family: 'VT323', monospace;
   font-size: 25px;
+<<<<<<< HEAD
 }*/
 
 
@@ -318,4 +323,6 @@
   .font-vt323 {
     font-size: 20px;
   }
+=======
+>>>>>>> ishita2
 }
