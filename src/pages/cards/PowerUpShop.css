@@ -2,16 +2,6 @@ body{
   overflow-y: auto;
 }
 .shop-container {
-<<<<<<< HEAD
-    background: linear-gradient(to bottom, #000428, #004e92);
-  }
-  
-  .font-arcade {
-    font-family: "Press Start 2P", cursive;
-  }
-  
-  
-=======
     size:contain;
   }
   
@@ -44,7 +34,6 @@ body{
     font-size: medium;
     color: #ffae00
   }
->>>>>>> ishita2
   
   .text-neon-pink {
     color: #ff00e6;
@@ -57,19 +46,12 @@ body{
   }
   
   .text-neon-yellow {
-<<<<<<< HEAD
-    color: #fffb00;
-    text-shadow: 0 0 8px #fffb00, 0 0 16px #fffb00, 0 0 24px #fffb00;
-=======
     color: #0aa3e4;
     /*text-shadow: 0 0 8px #fffb00, 0 0 16px #fffb00, 0 0 24px #fffb00;*/
->>>>>>> ishita2
   }
   
   .flicker {
     animation: flicker 1.5s infinite;
-<<<<<<< HEAD
-=======
     transform: scale(1.25)
   }
   
@@ -168,7 +150,6 @@ body{
       multiverseTitle 1.4s cubic-bezier(0.25, 1, 0.5, 1) both,
       multiverseBreath 5.5s ease-in-out infinite;
     animation-delay: 0s, 1.5s; /* persistent starts AFTER entrance */
->>>>>>> ishita2
   }
   
   @keyframes flicker {
@@ -182,20 +163,6 @@ body{
   }
   
   .grid > div {
-<<<<<<< HEAD
-    background: rgba(0, 0, 0, 0.8);
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 0 12px #0aff99, 0 0 24px #0aff99, 0 0 36px #0aff99;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .grid > div:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 16px #ff00e6, 0 0 32px #ff00e6, 0 0 48px #ff00e6;
-  }
-  
-=======
   background: transparent;
   overflow: visible;
 }
@@ -400,4 +367,3 @@ body{
   animation: cosmic-float 6s ease-in-out infinite, glow-pulse 1s ease-in-out infinite;
 }
 /* remove .grid > div:hover img to avoid conflicts */
->>>>>>> ishita2
