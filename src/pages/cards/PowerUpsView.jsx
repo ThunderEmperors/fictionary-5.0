@@ -3,9 +3,6 @@ import "./PowerUpsView.css";
 import useContext from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import ENDPOINTS from "../../utils/APIendpoints";
-<<<<<<< HEAD
-import powercard from "/assets/powercard.jpg";
-=======
 //import powercard from "/assets/powercard.jpg";
 import AsteroidCard from "/assets/AsteroidCard.png";
 import PlanetBoostCard from "/assets/PlanetBoostCard.png";
@@ -46,7 +43,6 @@ const CARD_UI_MAP = {
       }
 };
 
->>>>>>> ishita2
 
 const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -55,11 +51,8 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
   const navigate = useNavigate();
   const context = useContext();
 
-<<<<<<< HEAD
-=======
   const ui = CARD_UI_MAP[card.index] || CARD_UI_MAP[1];
 
->>>>>>> ishita2
   const checkAval = () => {
     setAvailable(card.aval_cards[card.index] === "1");
     console.log("CheckAval");
@@ -96,36 +89,17 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
   if (!available) return null;
 
   return (
-<<<<<<< HEAD
-    <div
-=======
    /* <div
->>>>>>> ishita2
       className={`p-6 max-w-sm rounded-lg shadow-lg text-white relative ${
         available ? "hover:shadow-green" : "hover:shadow-red"
       }`}
       onClick={handleClick}
       style={{
-<<<<<<< HEAD
-        backgroundImage: `url(${powercard})`,
-=======
         backgroundImage: `url(${ui.bg})`,
->>>>>>> ishita2
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "350px",
       }}
-<<<<<<< HEAD
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg">
-        <div className="relative z-10 text-xl font-arcade uppercase mb-4 flex-auto mt-12 text-center">
-          {card.text}
-        </div>
-        <div className="relative z-10 text-sm mb-2 ml-5 mr-5 text-center">{card.desc}</div>
-        <div className="relative z-10 text-lg font-bold text-center">Coins: {card.coins}</div>
-      </div>
-    </div>
-=======
     >*/
    
 
@@ -158,7 +132,6 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
   </div>
 </div>
 
->>>>>>> ishita2
   );
 };
 
