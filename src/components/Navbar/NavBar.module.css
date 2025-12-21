@@ -1,98 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* ===================== */
+/* FONTS                 */
+/* ===================== */
+
+/* OLD MEGATECH — ONLY FOR FICTIONARY */
 @font-face {
-  font-family: 'myFont';
-  src: url(/assets/operius-mono.ttf); 
-}
-.font-operius{
-  font-family: myFont;
-}
-@keyframes flickering {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.3;
-  }
+  font-family: 'MegatechOriginal';
+  src: url('/assets/MegatechFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@keyframes popIn {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* MEGATECH (2) — MENU ITEMS */
+@font-face {
+  font-family: 'Megatech2';
+  src: url('/assets/Megatech(2).ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+/* ===================== */
+/* BRAND (FICTIONARY)    */
+/* ===================== */
+.brand {
+  font-family: 'MegatechOriginal', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
 
-.flickering {
-  animation: flickering 2s infinite;
-  text-shadow: 0 0 8px #eef4a0, 0 0 15px #e3e9cd, 0 0 20px #f8ee94;
-}
+  color: #00b84a;
+  text-shadow:
+    0 0 2px #00ff66,
+    0 0 6px rgba(0, 255, 102, 0.6);
 
-.popIn {
-  animation: popIn 0.5s ease forwards; 
-}
-
-.loginButton,
-.logoutButton {
-  font-size: 16px;
-  padding: 5px 10px;
-  border: 2px solid #ff007f;
-  background-color: transparent;
-  color: #00ffff;
-  font-family: "Press Start 2P", cursive;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
   cursor: pointer;
+  transition: text-shadow 0.3s ease;
 }
 
-.loginButton:hover,
-.logoutButton:hover {
-  background-color: #ff007f;
-  color: #000;
-  box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+.brand:hover {
+  text-shadow:
+    0 0 4px #00ff66,
+    0 0 10px rgba(0, 255, 102, 0.8);
 }
 
-.mobileMenu {
-  animation: slideDown 0.5s ease-out forwards;
-}
-.neonEffect {
+/* ===================== */
+/* NAV ITEMS             */
+/* ===================== */
+.navItem {
+  font-family: 'Megatech2', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.4px;
+
+  color: #00d65c;
+  opacity: 0.9;
+
+  cursor: pointer;
   position: relative;
-  color: #00ffff; 
-  text-shadow: 0 0 5px #c866e3, 0 0 10px #de6fe6, 0 0 20px #e9c3f2;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  transition: all 0.25s ease;
 }
 
-.neonEffect:hover {
-  transform: scale(1.1);
-  text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff;
-  animation: flicker 1.5s infinite alternate;
+/* underline */
+.navItem::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: #00ff66;
+  box-shadow: 0 0 6px #00ff66;
+  transition: width 0.25s ease;
 }
 
-@keyframes flicker {
-  0% {
-    opacity: 1;
-    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff;
-  }
-  50% {
-    opacity: 0.8;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 35px #00ffff;
-  }
-  100% {
-    opacity: 1;
-    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff;
-  }
+.navItem:hover {
+  opacity: 1;
+  color: #00ff66;
+  text-shadow: 0 0 6px #00ff66;
+}
+
+.navItem:hover::after {
+  width: 100%;
+}
+
+/* ===================== */
+/* LOGOUT BUTTON         */
+/* ===================== */
+.logoutButton {
+  font-family: 'Megatech2', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+
+  padding: 6px 12px;
+  border: 1px solid #00ff66;
+  background: transparent;
+  color: #00ff66;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.logoutButton:hover {
+  background: #00ff66;
+  color: #000;
+  box-shadow: 0 0 10px #00ff66;
 }

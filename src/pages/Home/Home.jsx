@@ -91,24 +91,8 @@ const Home = () => {
 >
 
       <div className="bg-container">
-        {/* Character */}
-        <div
-          className="character-container"
-          style={{
-            position: "absolute",
-            left: characterPosition.left,
-            top: characterPosition.top,
-            transform: "translate(-50%, -50%)",
-            transition: "left 0.5s ease, top 0.5s ease",
-          }}
-        >
-          <img
-            src={characterSprite}
-            alt="Character"
-            className="character-sprite"
-          />
-          <div className="speech-bubble">{dialogue}</div>
-        </div>
+       
+
 
         {/* Title */}
         <div className="sign text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
