@@ -74,40 +74,48 @@ const PowerUpShop = () => {
     }
   }, [context.token, updateState, gameLive]);
 
-  const cardItems =
-    cards.cardList.length !== 0 ? (
-      cards.cardList.map((card, index) => (
-        <PowerUpShopView  card={card} refreshUpdateState={refreshUpdateState} />
-      ))
-    ) : (
-      <p className="text-white text-lg font-gen text-center">No Power-Ups Available</p>
-    );
-
-  return (<div className="relative isolate min-h-screen">
-
+ return (
+  <div className="shop-page-wrapper">
+    <div className="shop-page">
+      
+      {/* FIXED BACKGROUND */}
+      <div className="shop-bg">
         <img
-        src={bgps9}
-        alt=""
-        className="absolute inset-0 w-full max-h-screen h-full object-cover object-top -z-10 mt-0"
+          src={bgps9}
+          alt=""
+          className="w-full h-full object-cover object-top"
+          draggable={false}
         />
-
-    <div className="relative z-10">
-      <h1 className="xl:text-15xl sm:text-6xl md:text-8xl lg:text-13xl
-               multiverse-title metallic-text
-               mt-7 mb-5 text-center">
-        POWER UP SHOP
-      </h1>
-
-
-      <h2 className="xl:text-3xl sm:text-2xl md:text-3xl lg:text-3xl flicker font-coins -mt-3 text-center">
-        Coins: <span className="font-coins flicker">{userCoins}</span>
-      </h2>
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full justify-item-scenter px-8">
-        {cardItems}
       </div>
-    </div></div>
-  );
-};
+
+      {/* SCROLLABLE CONTENT */}
+      <div className="shop-content">
+        <h1 className="xl:text-15xl sm:text-6xl md:text-8xl lg:text-13xl
+                       multiverse-title metallic-text
+                       mt-7 mb-5 text-center">
+          POWER UP SHOP
+        </h1>
+
+        <h2 className="xl:text-3xl sm:text-2xl md:text-3xl lg:text-3xl
+                       flicker font-coins -mt-3 text-center">
+          Coins: <span>{userCoins}</span>
+        </h2>
+
+        <div className="cards-grid">
+          {cards.cardList.map((card, index) => (
+            <PowerUpShopView
+              key={index}
+              card={card}
+              refreshUpdateState={refreshUpdateState}
+            />
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+);
+}
 
 export default PowerUpShop;
 

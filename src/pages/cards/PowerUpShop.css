@@ -1,9 +1,9 @@
-.overlayPower {
+/*.overlayPower {
   overflow-x: hidden;
   overflow-y:auto;
   background-size: cover;
   min-height: 100vh;
-}
+}*/
 .shop-container {
     size:contain;
   }
@@ -166,9 +166,7 @@
     }
   }
 
-.grid {
-  min-height: 250vh;
-}
+
   
   .grid > div {
   background: transparent;
@@ -342,21 +340,14 @@
 }
 
 .shop-page {
-  position: relative;
+  height: 100vh;          /* fixed height */
+  overflow-y: auto;      /* THIS enables scroll */
   overflow-x: hidden;
-  overflow-y:auto;
+  position: relative;
 }
 
-.shop-page::before {
-  content: "";
-  position: fixed;         
-  inset: 0;
-  background-image: url("/assets/bgps3.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top center;
-  z-index: -1;
-} 
+
+
 
 .card-info {
   position: absolute;
@@ -441,5 +432,49 @@
   /* allows page scroll */
   overflow-x: hidden;
 }
+
+
+
+/* pushes whole page BELOW navbar */
+.shop-page-wrapper {
+  margin-top: 0.5rem;   /* adjust to navbar height */
+  height: calc(100vh - 0.5rem);
+}
+
+/* page layering */
+.shop-page {
+  position: relative;
+  height: 100%;
+}
+
+/* fixed background */
+.shop-bg {
+  position: fixed;
+  top: 4.5rem;          /* 👈 THIS IS CRITICAL */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 0.5rem);
+  z-index: 0;
+}
+
+/* scrollable content */
+.shop-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 4rem;
+}
+
+/* cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
 
 /* remove .grid > div:hover img to avoid conflicts */

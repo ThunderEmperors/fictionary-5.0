@@ -107,7 +107,7 @@ const PowerUpShopView = ({ card, refreshUpdateState }) => {
 
    
 
-    <div className="flex flex-col items-center visible">
+    <div className="flex justify-center">
   {/* CARD WRAPPER */}
   <div
     className="card-wrapper relative w-[280px] h-[420px] cursor-pointer"

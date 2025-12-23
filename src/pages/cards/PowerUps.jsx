@@ -92,7 +92,6 @@ const PowerUps = () => {
       </div>
     );
   } else if (cards.length > 0) {
-  
     cardItems = cards.map((card, index) => (
       <PowerUpsViews
        key={index} 
@@ -115,7 +114,7 @@ const PowerUps = () => {
   return (
     <>
     
-    <div className="bg-gradient-to-b from-blue-950 via-purple-950 to-black min-h-screen flex flex-col p-8 ">
+   
       <h1 className="text-3xl text-yellow-400 mb-4 font-gen">
         PowerUps Available
       </h1>
@@ -132,7 +131,7 @@ const PowerUps = () => {
       {cardItems}
     </div></div>
       
-    </div>
+   
     
     <ToastContainer />
     </>

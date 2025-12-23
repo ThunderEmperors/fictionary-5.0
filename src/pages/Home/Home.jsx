@@ -129,44 +129,10 @@ const Home = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="overlay-background"></div>
-      <div className="shooting-stars">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div className="stars">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+     
 
       <div className="flex-grow flex flex-col items-center justify-center pb-5 z-10">
-        <div
-          className="character-container"
-          style={{
-            position: "absolute",
-            left: characterPosition.left,
-            top: characterPosition.top,
-            transform: "translate(-50%, -50%)",
-            transition: "left 1s, top 1s",
-          }}
-        >
-          <img
-            src={characterSprite}
-            alt="Character"
-            className="character-sprite"
-            style={{
-              width: "50px",
-              height: "50px",
-            }}
-          />
-          <div className="speech-bubble">{dialogue}</div>
-        </div>
+        
         <div className="flex items-center justify-center">
   <div className="sign font-pixel text-3xl md:text-5xl lg:text-6xl xl:text-8xl text-white">
     <span className="fast-flicker">F</span>ICT<span className="fast-flicker">I</span>O
@@ -178,7 +144,7 @@ const Home = () => {
   gameLive.game_live ? (
     <div className="play_now mt-7">
       <Link to="/question" className="play retro-btn">
-                PLAY NOW
+                PLAY   NOW
               </Link>
             </div>
           ) : (
