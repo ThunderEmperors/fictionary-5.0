@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* =========================
    FONT (MATCH MATRIX THEME)
 ========================= */
@@ -10,23 +9,16 @@
 /* =========================
    OVERLAY — MATRIX STYLE
 ========================= */
-=======
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
->>>>>>> ishita2
 .rules1 {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-
-=======
->>>>>>> ishita2
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-<<<<<<< HEAD
 
   /* MATRIX DARK OVERLAY */
   background:
@@ -47,30 +39,10 @@
 ========================= */
 .modal {
   /* ⛔ POSITION & SIZE UNCHANGED */
-=======
-  background: linear-gradient(
-    rgba(0, 0, 50, 0.9),
-    rgba(10, 10, 60, 0.7)
-  ); /* Dark overlay with a hint of neon blue */
-  z-index: 11000;
-  backdrop-filter: blur(4px); /* Slight blur for the retro arcade glow */
-  animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in animation */
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* Main modal container */
-.modal {
-  font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(135deg, #e99dd8, #b382e3); /* Neon purple-pink gradient */
-  border: 3px solid #f2e0d6;
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
->>>>>>> ishita2
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-<<<<<<< HEAD
 
   width: auto;
   max-width: 80vw;
@@ -134,62 +106,11 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-=======
-  width: auto;
-  max-width: 80vw; /* Responsive width */
-  min-width: 300px;
-  max-height: 90vh; /* Prevent modal from overflowing */
-  overflow-y: auto; /* Scroll for overflowing content */
-  padding: 24px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Retro pop-in animation */
-}
-
-/* Heading style */
-.h2 {
-   /* Retro-styled font */
-   font-family: 'Orbitron', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 1.2;
-  color: #00ffcc; /* Neon teal color */
-  text-align: center;
-  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; /* Neon glow effect */
-  margin-bottom: 16px;
-  animation: glowPulse 2s infinite alternate; /* Subtle glow effect */
-}
-
-/* Paragraph style */
-.p {
-  font-family: 'Orbitron', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #0f0b0b;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  text-align: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
->>>>>>> ishita2
 }
 
 @keyframes popIn {
   0% {
-<<<<<<< HEAD
     transform: translate(-50%, -50%) scale(0.85);
-=======
-    transform: translate(-50%, -50%) scale(0.8);
->>>>>>> ishita2
     opacity: 0;
   }
   100% {
@@ -198,7 +119,6 @@
   }
 }
 
-<<<<<<< HEAD
 /* =========================
    MATRIX NEON PULSE
 ========================= */
@@ -214,13 +134,5 @@
       0 0 14px #00ff66,
       0 0 28px rgba(0, 255, 102, 1),
       0 0 44px rgba(0, 255, 102, 0.9);
-=======
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 10px #cce0dc, 0 0 20px #dfeeeb, 0 0 30px #eefcf9;
-  }
-  to {
-    text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc;
->>>>>>> ishita2
   }
 }

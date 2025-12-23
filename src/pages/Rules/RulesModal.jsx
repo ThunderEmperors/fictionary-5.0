@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 /*import React from "react";
-=======
-import React from "react";
->>>>>>> ishita2
 import { motion } from "framer-motion"; // Import Framer Motion for animations
 import "./RulesModal.css";
 
@@ -58,7 +54,6 @@ const RulesModal = ({ isOpen, onClose }) => {
 };
 
 export default RulesModal;
-<<<<<<< HEAD
 
 
 */
@@ -138,5 +133,3 @@ const RulesModal = ({ isOpen, onClose }) => {
 };
 
 export default RulesModal;
-=======
->>>>>>> ishita2
