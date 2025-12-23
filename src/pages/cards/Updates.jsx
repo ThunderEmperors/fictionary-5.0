@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*import React, { useEffect, useState } from "react";
+=======
+import React, { useEffect, useState } from "react";
+>>>>>>> ishita2
 import "./Updates.css"; 
 import UpdatePoint from "./UpdatePoint";
 
@@ -96,6 +100,7 @@ const Updates = () => {
 };
 
 export default Updates;
+<<<<<<< HEAD
 */
 
 
@@ -229,3 +234,5 @@ const Updates = () => {
 };
 
 export default Updates;
+=======
+>>>>>>> ishita2

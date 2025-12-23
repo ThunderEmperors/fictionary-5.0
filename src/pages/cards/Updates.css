@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> ishita2
 .bg-dark-update-blue {
     background-color: #0d0d25;
     color: #f2e0d6;
@@ -19,12 +23,20 @@
     align-items: center;
     font-family: 'Press Start 2P', cursive;
     color: #f7d716; /* Retro neon yellow text */
+<<<<<<< HEAD
 /*    text-shadow: 0 0 5px #f7d716, 0 0 10px #f39c12, 0 0 15px #e67e22;
+=======
+    text-shadow: 0 0 5px #f7d716, 0 0 10px #f39c12, 0 0 15px #e67e22;
+>>>>>>> ishita2
     animation: neon-border-glow 2s infinite alternate;
   }
   
   /* Add a pulsing animation to the border for the neon glow */
+<<<<<<< HEAD
 /*  @keyframes neon-border-glow {
+=======
+  @keyframes neon-border-glow {
+>>>>>>> ishita2
     0% {
       box-shadow: 0 0 10px #f7d716, 0 0 20px #f39c12, 0 0 30px #e67e22;
     }
@@ -34,7 +46,11 @@
   }
   
   /* Optional: Add hover effect for more interaction */
+<<<<<<< HEAD
  /* .update-container:hover {
+=======
+  .update-container:hover {
+>>>>>>> ishita2
     transform: scale(1.02);
     transition: transform 0.2s ease-in-out;
     box-shadow: 0 0 25px #f7d716, 0 0 35px #f39c12, 0 0 45px #e67e22;
@@ -108,6 +124,7 @@
       transform: translateY(0);
     }
   }
+<<<<<<< HEAD
   */
   .updates-page {
   position: relative;
@@ -513,3 +530,6 @@
     transform: translateY(0);
   }
 }
+=======
+  
+>>>>>>> ishita2
