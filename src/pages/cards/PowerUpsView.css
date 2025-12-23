@@ -1,3 +1,17 @@
 body{
     overflow-y: auto;
   }
+
+.card-hover {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+
+.card-hover:hover {
+  transform: scale(1.08);
+}
+
+
+.card-hover:hover {
+  filter: drop-shadow(0 0 12px white) drop-shadow(0 0 22px white);
+}

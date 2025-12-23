@@ -1,14 +1,17 @@
-body{
-  overflow-y: auto;
+.overlayPower {
+  overflow-x: hidden;
+  overflow-y:auto;
+  background-size: cover;
+  min-height: 100vh;
 }
 .shop-container {
     size:contain;
   }
   
   .font-arcade {
-    font-family: "FlowerDisplay";
-    font-size: larger;
-    color:burlywood;
+    font-family: "audiowide";
+    font-size: 0.7rem;
+    color:rgb(198, 204, 21);
   }
   
   .font-coins {
@@ -33,21 +36,6 @@ body{
     font-family: "cd2";
     font-size: medium;
     color: #ffae00
-  }
-  
-  .text-neon-pink {
-    color: #ff00e6;
-    text-shadow: 0 0 8px #ff00e6, 0 0 16px #ff00e6, 0 0 24px #ff00e6;
-  }
-  
-  .text-neon-green {
-    color: #0aff99;
-    text-shadow: 0 0 8px #0aff99, 0 0 16px #0aff99, 0 0 24px #0aff99;
-  }
-  
-  .text-neon-yellow {
-    color: #0aa3e4;
-    /*text-shadow: 0 0 8px #fffb00, 0 0 16px #fffb00, 0 0 24px #fffb00;*/
   }
   
   .flicker {
@@ -94,6 +82,31 @@ body{
     font-display: swap; 
   }
 
+  
+  @font-face {
+    font-family: 'audiowide';
+    src: url("/assets/audiowide.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+
+    @font-face {
+    font-family: 'Ebox';
+    src: url("/assets/Ebox.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+
+
+  @media (max-width: 768px) {
+  .overlayPower {
+    background-size: contain;
+    background-position: top center;
+  }
+}
+
  /* ---------- ENTRANCE: Multiverse Title ---------- */
 @keyframes multiverseTitle {
   0% {
@@ -106,41 +119,32 @@ body{
     opacity: 1;
     transform: scale(1.05) translateY(0);
     filter: blur(2px);
-    text-shadow:
-      0 0 8px #7f00ff,
-      0 0 16px #00eaff;
+    
   }
   100% {
     opacity: 1;
     transform: scale(1);
     filter: blur(0);
-    text-shadow:
-      0 0 6px #ff8800,
-      0 0 12px #dbe684,
-      0 0 24px rgba(216, 216, 177, 0.4);
+    
   }
 }
 
   /* ---------- PERSISTENT: Reality Breathing ---------- */
   @keyframes multiverseBreath {
     0% {
-      transform: scale(1.5);
-      text-shadow:
-        0 0 6px #ff8800,
-        0 0 12px #dbe684;
+      transform: scale(1);
+     
     }
     50% {
-      transform: scale(1.75);
-      text-shadow:
-        0 0 12px #ff8800,
+      transform: scale(1.023);
+      /*text-shadow:
+        0 0 12px #06914e,
         0 0 24px #dbe684,
-        0 0 36px rgba(255, 255, 255, 0.35);
+        0 0 36px rgba(255, 255, 255, 0.35);*/
     }
     100% {
-      transform: scale(1.5);
-      text-shadow:
-        0 0 6px #ff8800,
-        0 0 12px #dbe684;
+      transform: scale(1);
+    
     }
   }
 
@@ -161,6 +165,10 @@ body{
       opacity: 0.85;
     }
   }
+
+.grid {
+  min-height: 250vh;
+}
   
   .grid > div {
   background: transparent;
@@ -175,49 +183,13 @@ body{
 }
 
 /* Red / Asteroid */
-.glow-red {
+.glow-yellow {
   filter:
-    drop-shadow(0 0 5px #ff3b3b)
-    drop-shadow(0 0 5px #ff3b3b)
-    drop-shadow(0 0 5px rgba(255,59,59,0.9));
+    
+    drop-shadow(0 0 5px #eef499)
+    ;
 }
 
-/* Green / Planet */
-.glow-green {
-  filter:
-    drop-shadow(0 0 5px #00ff9c)
-    drop-shadow(0 0 5px #00ff9c)
-    drop-shadow(0 0 5px rgba(0,255,156,0.9));
-}
-
-/* Purple / Rift */
-.glow-purple {
-  filter:
-    drop-shadow(0 0 5px #a855f7)
-    drop-shadow(0 0 5px #a855f7)
-    drop-shadow(0 0 5px rgba(168,85,247,0.9));
-}
-
-.glow-blue {
-  filter:
-    drop-shadow(0 0 5px #1730ce)
-    drop-shadow(0 0 5px #1730ce)
-    drop-shadow(0 0 5px #1730ce);
-}
-
-.glow-white {
-  filter:
-    drop-shadow(0 0 5px #c1c3cf)
-    drop-shadow(0 0 5px #c1c3cf)
-    drop-shadow(0 0 5px #c1c3cf);
-}
-
-.glow-orange {
-  filter:
-    drop-shadow(0 0 5px #f39304)
-    drop-shadow(0 0 5px #f39304)
-    drop-shadow(0 0 5px #f39304);
-}
 
 /*.grid > div:hover img.glow-red{
 
@@ -251,7 +223,7 @@ body{
   font-family: 'FlowerDisplay', monospace;
   font-size: 1rem;
   text-transform: uppercase;
-  color: #facc15; /* yellow-400 */
+  color: #fa6d15; /* yellow-400 */
   text-align: center;
 
   /* visual polish */
@@ -283,10 +255,10 @@ body{
 
 @keyframes glow-pulse {
   0%, 100% {
-    filter: drop-shadow(0 0 18px currentColor);
+    filter: drop-shadow(0 0 18px white);
   }
   50% {
-    filter: drop-shadow(0 0 28px currentColor);
+    filter: drop-shadow(0 0 28px white);
   }
 }
 
@@ -339,6 +311,8 @@ body{
   }
 }
 
+
+
 .glow {
   animation: glow-breathe 1s ease-in-out infinite;
 }
@@ -362,8 +336,110 @@ body{
 
 .card-wrapper:hover img {
   transform: scale(1.12); /* scales the card */
-  filter: brightness(1.08) drop-shadow(0 0 18px #fde68a)
+  filter: brightness(1.08) drop-shadow(0 0 18px #d7d3c3)
           drop-shadow(0 0 28px #fde68a); /* initial glow */
   animation: cosmic-float 6s ease-in-out infinite, glow-pulse 1s ease-in-out infinite;
 }
+
+.shop-page {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y:auto;
+}
+
+.shop-page::before {
+  content: "";
+  position: fixed;         
+  inset: 0;
+  background-image: url("/assets/bgps3.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: -1;
+} 
+
+.card-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  align-content: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  background: rgba(6, 18, 18, 0.8);
+  border-top: 1px solid rgba(0, 255, 180, 0.35);
+
+  padding: 5px;
+  color: #4ddc0a;
+
+  transform: translateY(100%);
+  opacity: 0;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-wrapper:hover .card-info {
+  transform: translateY(-10px);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .card-info {
+    position: static;         /* no overlap */
+    transform: none ;
+    opacity: 1;
+    pointer-events: auto;
+
+           /* space from card */
+    margin-top: -48px;
+  }
+}
+
+.metallic-text {
+  font-family: 'Ebox';
+  background: linear-gradient(
+    90deg,
+    #989797 0%,
+    #f5f5f5 15%,
+    #9e9e9e 30%,
+    #ffffff 45%,
+    #878787 60%,
+    #eeeeee 75%,
+    #6d6b6b 100%
+  );
+
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+   background-size: 200% 100%;
+  animation: shine 4s linear infinite,
+  multiverse-glitch 0.5s infinite,
+  multiverseBreath 5.5s ease-in-out infinite;
+
+  /* metallic depth */
+  text-shadow:
+    0 1px 1px rgba(255,255,255,0.3),
+    0 -1px 1px rgba(0,0,0,0.4);
+}
+
+@keyframes shine {
+  0% { background-position: 50% 100%; }
+  100% { background-position: 300% 50%; }
+}
+
+.powerup-page {
+  min-height: 100vh;
+  background-image: url("/path/to/bgps9.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  /* allows page scroll */
+  overflow-x: hidden;
+}
+
 /* remove .grid > div:hover img to avoid conflicts */

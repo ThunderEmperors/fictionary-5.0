@@ -4,43 +4,43 @@ import useContext from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import ENDPOINTS from "../../utils/APIendpoints";
 //import powercard from "/assets/powercard.jpg";
-import AsteroidCard from "/assets/AsteroidCard.png";
-import PlanetBoostCard from "/assets/PlanetBoostCard.png";
-import CosmicRevealCard from "/assets/CosmicRevealCard.png";
-import DimEchoCard from "/assets/DimEchoCard.png";
-import TimeFractureCard from "/assets/TimeFractureCard.png";
-import OraclePowerCard from "/assets/OraclePowerCard.png";
+import TesseractFold from "/assets/TesseractFold.png";
+import MobiusLoop from "/assets/MobiusLoop.png";
+import FracturedManifold from "/assets/FracturedManifold.png";
+import NonEuclidAnchor from "/assets/NonEuclidAnchor.png";
+import ObserverParadox from "/assets/ObserverParadox.png";
+import DimensionShear from "/assets/DimensionShear.png";
 
 const CARD_UI_MAP = {
   0: {
-    bg: AsteroidCard,
-    glow: "glow-red",
-    title: "Asteroid Strike",
+    bg: TesseractFold,
+    glow: "glow-yellow",
+    title: "Tesseract Fold",
   },
   1: {
-    bg: PlanetBoostCard,
-    glow: "glow-green",
-    title: "Planet Boost"
+    bg: NonEuclidAnchor,
+    glow: "glow-yellow",
+    title: "Non-Euclid Anchor"
   },
   2: {
-    bg: CosmicRevealCard,
-    glow: "glow-purple",
-    title: "Cosmic Reveal"
+    bg: ObserverParadox,
+    glow: "glow-yellow",
+    title: "Observer Paradox"
   },
   3: {
-    bg: DimEchoCard,
-    glow: "glow-blue",
-    title: "Dimensional Echo"
+    bg: MobiusLoop,
+    glow: "glow-yellow",
+    title: "Mobius Loop"
   },
   4: {
-    bg: TimeFractureCard,
-    glow: "glow-white",
-    title: "Time Fracture"
+    bg: DimensionShear,
+    glow: "glow-yellow",
+    title: "Dimension Shear"
   },
   5: {
-    bg: OraclePowerCard,
-    glow: "glow-orange",
-    title: "Oracle Power"
+    bg: FracturedManifold,
+    glow: "glow-yellow",
+    title: "Fractured Manifold"
   }
 };
 
@@ -107,7 +107,7 @@ const PowerUpShopView = ({ card, refreshUpdateState }) => {
 
    
 
-     <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center visible">
   {/* CARD WRAPPER */}
   <div
     className="card-wrapper relative w-[280px] h-[420px] cursor-pointer"
@@ -117,43 +117,24 @@ const PowerUpShopView = ({ card, refreshUpdateState }) => {
     <img
       src={ui.bg}
       alt={ui.title}
-      className={`w-full h-full card-float object-contain card-hover ${ui.glow}`}
+      className={`w-full h-full object-contain card-float ${ui.glow}`}
       draggable={false}
     />
 
-    {/* TITLE OVERLAY */}
-    <div className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 inset-0 flex items-center justify-center pointer-events-none">
-      <h3 className="card-title-overlay card-title-glitch">
-        {ui.title}
-      </h3>
-    </div>
-  </div>
-
-  {/* DESCRIPTION */}
- <p
-  className="
-    text-sm
-    xl:text-3xl sm:text-2xl md:text-3xl lg:text-3xl
-    font-cd2
-    glow
-    text-center
-    px-4
-    max-w-[260px]
-    opacity-90
-    -mt-20
-    leading-snug
-  "
->
-    {card.desc}
-  </p>
+    {/* DESCRIPTION PANEL (MUST BE INSIDE) */}
+    <div className="card-info text-center ">
+      <p>{card.desc}</p>
+  
 
   {/* COINS */}
-  <div className="text-base font-bold font-cd1 text-green-300">
+  <div className="text-[1rem] font-bold font-cd1 text-center text-green-100 mt-0">
     Coins: {card.coins}
+  </div>  </div>
   </div>
 
   {handleAvalText()}
 </div>
+
 
 
     )
@@ -161,3 +142,10 @@ const PowerUpShopView = ({ card, refreshUpdateState }) => {
 };
 
 export default PowerUpShopView;
+/*
+ {/* TITLE OVERLAY 
+    <div className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 inset-0 flex items-center justify-center pointer-events-none">
+      <h3 className="card-title-overlay card-title-glitch">
+        {ui.title}
+      </h3>
+    </div>*/

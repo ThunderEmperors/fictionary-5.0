@@ -4,45 +4,45 @@ import useContext from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import ENDPOINTS from "../../utils/APIendpoints";
 //import powercard from "/assets/powercard.jpg";
-import AsteroidCard from "/assets/AsteroidCard.png";
-import PlanetBoostCard from "/assets/PlanetBoostCard.png";
-import CosmicRevealCard from "/assets/CosmicRevealCard.png";
-import DimEchoCard from "/assets/DimEchoCard.png";
-import TimeFractureCard from "/assets/TimeFractureCard.png"
-import OraclePowerCard from "/assets/OraclePowerCard.png";
+import TesseractFold from "/assets/TesseractFold.png";
+import MobiusLoop from "/assets/MobiusLoop.png";
+import FracturedManifold from "/assets/FracturedManifold.png";
+import NonEuclidAnchor from "/assets/NonEuclidAnchor.png";
+import ObserverParadox from "/assets/ObserverParadox.png";
+import DimensionShear from "/assets/DimensionShear.png";
 
 const CARD_UI_MAP = {
+  3: {
+    bg: TesseractFold,
+    glow: "glow-yellow",
+    title: "Tesseract Fold",
+  },
+  4: {
+    bg: NonEuclidAnchor,
+    glow: "glow-yellow",
+    title: "Non-Euclid Anchor"
+  },
+  5: {
+    bg: ObserverParadox,
+    glow: "glow-yellow",
+    title: "Observer Paradox"
+  },
   0: {
-    bg: AsteroidCard,
-    icon: "🧠",
-    glow: "glow-red",
+    bg: MobiusLoop,
+    glow: "glow-yellow",
+    title: "Mobius Loop"
   },
   1: {
-    bg: PlanetBoostCard,
-    icon: "🔥",
-    glow: "hover:glow-green",
+    bg: DimensionShear,
+    glow: "glow-yellow",
+    title: "Dimension Shear"
   },
   2: {
-    bg: CosmicRevealCard,
-    icon: "⏳",
-    glow: "glow-purple",
-  },
-  3: {
-      bg: DimEchoCard,
-      glow: "hover:shadow-blue-500",
-    },
-  4: {
-      bg: TimeFractureCard,
-      glow: "glow-white",
-      title: "Time Fracture",
-    },
-  5: {
-        bg: OraclePowerCard,
-        glow: "glow-orange",
-        title: "Oracle Power"
-      }
+    bg: FracturedManifold,
+    glow: "glow-yellow",
+    title: "Fractured Manifold"
+  }
 };
-
 
 const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -109,7 +109,7 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
     <img
       src={ui.bg}
       alt={ui.title}
-      className={`w-full h-full card-float object-contain ${ui.glow}`}
+      className={`w-full h-full card-hover object-contain ${ui.glow}`}
       draggable={false}
     />
 

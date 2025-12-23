@@ -1,11 +1,109 @@
-body{
-    overflow-y: auto;
-  }
-.cards{
-    font-family: 'Orbitron', sans-serif;
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-size: cover;
+  min-height: 100vh;
 }
-.font-expo{
-    font-family: 'Exo 2', sans-serif;
+
+.cards {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-expo {
+  font-family: 'Exo 2', sans-serif;
 }
 
 
+
+
+
+.card-wrapper {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.card-wrapper:hover {
+  transform: scale(1.08) translateY(-10px);
+}
+
+
+
+.card-hover {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.card-wrapper:hover .card-hover {
+  transform: scale(1.05);
+}
+
+
+
+.card-wrapper:hover img {
+  filter: drop-shadow(0 0 20px rgba(255,255,255,1))
+          drop-shadow(0 0 40px rgba(255,255,255,0.9));
+}
+
+
+
+
+.glow-red {
+  filter: drop-shadow(0 0 8px #ff4d4d);
+}
+
+.glow-green {
+  filter: drop-shadow(0 0 8px #00ff88);
+}
+
+.glow-purple {
+  filter: drop-shadow(0 0 8px #b066ff);
+}
+
+.glow-blue {
+  filter: drop-shadow(0 0 8px #2ea7ff);
+}
+
+.glow-white {
+  filter: drop-shadow(0 0 10px #ffffff);
+}
+
+.glow-orange {
+  filter: drop-shadow(0 0 8px #ff9f3f);
+}
+
+.card-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+
+  background: rgba(6, 18, 18, 0.9);
+  border-top: 1px solid rgba(0, 255, 180, 0.35);
+
+  padding: 14px;
+  color: #bfffee;
+
+  transform: translateY(100%);
+  opacity: 0;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-wrapper:hover .card-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+.card-title-overlay {
+  color: white;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8),
+               0 0 10px rgba(255,255,255,1);
+}
+
+
+.card-title-glitch {
+  display: inline-block;
+}
