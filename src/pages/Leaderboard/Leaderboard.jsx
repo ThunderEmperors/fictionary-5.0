@@ -15,7 +15,9 @@ const Leaderboard = () => {
     setLoading(true);
     fetch(endpoints.LEADERBOARD, {
       headers: {
-        Authorization: `Token ${token || localStorage.getItem("fictionary_token")}`,
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
       },
     })
       .then((res) => {
@@ -31,55 +33,71 @@ const Leaderboard = () => {
       .finally(() => setLoading(false));
   };
 
-  useEffect(() => {
-    getLeaderboard();
-  }, [token]);
+  useEffect(() => getLeaderboard(), [token]);
+
+  const top3 = leaderboard.slice(0, 3);
+  const rest = leaderboard.slice(3);
 
   return (
-    <div className="matrix-bg">
-      <div className="leaderboard-container">
-        <div className="leaderboardItems">
-          <h1 className="leaderboardHeader">Leaderboard</h1>
+    <div className="lb-bg">
 
-          {loading ? (
-            <div className="loader">
-              <ColorRing
-                visible={true}
-                height="135"
-                width="135"
-                ariaLabel="loading"
-                colors={["#ff00e4", "#00ffcc", "#fffb00", "#ff6f00", "#0000ff"]}
-              />
-            </div>
-          ) : leaderboard.length ? (
-            leaderboard.map((elem, index) => (
-              <div
-                className={`score ${
-                  index === 0
-                    ? "first-place"
-                    : index === 1
-                    ? "second-place"
-                    : index === 2
-                    ? "third-place"
-                    : ""
-                }`}
-                key={index}
-              >
-                <div className="rank">{index + 1}</div>
-                {elem.avatar && (
-                  <img src={elem.avatar} alt="avatar" className="avatar" />
-                )}
-                <div className="name">{elem.name}</div>
-                <div className="score-value">{elem.points}</div>
+      <h1 className="lb-title">LEADERBOARD</h1>
+
+      <div className="podium-wrapper">
+        {loading ? (
+          <ColorRing height="120" width="120" />
+        ) : (
+          <div className="podium">
+
+            {top3[1] && (
+              <div className="podium-card second">
+                <div className="hex-frame">
+                  <img src={top3[1].avatar} className="hex-img" />
+                </div>
+                <div className="badge silver">2</div>
+                <div className="pod-name">{top3[1].name}</div>
+                <div className="pod-score pop-anim">{top3[1].points}</div>
               </div>
-            ))
-          ) : (
-            <p style={{ textAlign: "center", marginTop: "20px" }}>
-              No data available
-            </p>
-          )}
-        </div>
+            )}
+
+            {top3[0] && (
+              <div className="podium-card first spotlight">
+                <div className="hex-frame glow-pulse">
+                  <img src={top3[0].avatar} className="hex-img" />
+                </div>
+                <div className="badge gold">1</div>
+                <div className="crown sparkle">👑</div>
+                <div className="pod-name">{top3[0].name}</div>
+                <div className="pod-score pop-anim">{top3[0].points}</div>
+              </div>
+            )}
+
+            {top3[2] && (
+              <div className="podium-card third">
+                <div className="hex-frame">
+                  <img src={top3[2].avatar} className="hex-img" />
+                </div>
+                <div className="badge bronze">3</div>
+                <div className="pod-name">{top3[2].name}</div>
+                <div className="pod-score pop-anim">{top3[2].points}</div>
+              </div>
+            )}
+
+          </div>
+        )}
       </div>
+
+      <div className="lower-list">
+        {rest.map((elem, i) => (
+          <div className="list-row fade-in" style={{ "--i": i }} key={i}>
+            <div className="list-rank">{i + 4}</div>
+            {elem.avatar && <img src={elem.avatar} className="list-avatar" />}
+            <div className="list-name">{elem.name}</div>
+            <div className="list-score">{elem.points}</div>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 };
