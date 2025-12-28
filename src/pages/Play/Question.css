@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Technopath';
   src: url('/assets/Technopath.otf') format('opentype');
@@ -42,7 +41,7 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
 
-
+  overflow-x: hidden; /* NEW: safety */
 }
 
 /* ==============================
@@ -91,6 +90,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding-left: 12px;   /* NEW */
+  padding-right: 12px;  /* NEW */
 
   background:
     radial-gradient(
@@ -179,6 +181,9 @@ html, body {
 
   text-align: center;
   transform: translateY(-30px);
+
+  overflow-wrap: anywhere;   /* NEW */
+  word-break: break-word;    /* NEW */
 }
 
 /* ==============================
@@ -211,6 +216,9 @@ html, body {
   margin-bottom: 18px;
 
   text-shadow: 0 0 8px rgba(0, 255, 102, 0.8);
+
+  overflow-wrap: anywhere;   /* NEW */
+  word-break: break-word;    /* NEW */
 }
 
 /* ==============================
@@ -281,10 +289,15 @@ html, body {
   }
 
   .sci-question-box {
-    width: calc(100% - 24px);
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     padding: 20px;
     transform: none;
+  }
+
+  .round-parallelogram {
+    font-size: 20px;
+    padding: 6px 18px;
   }
 
   .question-text {

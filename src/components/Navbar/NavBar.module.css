@@ -33,6 +33,10 @@
 
   cursor: pointer;
   transition: text-shadow 0.3s ease;
+
+  /* NEW — ensures space from hamburger */
+  margin-right: 16px;
+  white-space: nowrap;
 }
 
 .brand:hover {
@@ -101,4 +105,35 @@
   background: #00ff66;
   color: #000;
   box-shadow: 0 0 10px #00ff66;
+}
+
+/* ===================== */
+/* RESPONSIVE FIXES      */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .brand {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    margin-right: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1.05rem;     /* reduced so hamburger is always visible */
+    letter-spacing: 1.5px;
+    margin-right: 24px;     /* guaranteed gap */
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .brand {
+    font-size: 0.95rem;
+    letter-spacing: 1.2px;
+    margin-right: 26px;
+  }
 }
