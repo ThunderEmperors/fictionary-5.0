@@ -147,12 +147,11 @@ if (isLoading) {
   return (
     <>
   
-    <div className="powerups-bg min-h-screen flex flex-col items-center p-8 ">
-      <h1 className="xl:text-15xl sm:text-6xl md:text-8xl lg:text-13xl
-                       multiverse-title metallic-text
-                       mt-7 mb-5 text-center">
-        POWERUPS AVAILABLE
-      </h1>
+    <div className="powerups-bg min-h-screen flex flex-col items-center py-8 px-3 ">
+    <h1 className="text-[clamp(20px,7vw,48px)] leading-tight text-center tracking-[0.04em] sm:tracking-[0.06em] multiverse-title metallic-text mt-7 mb-5 px-2">
+  <span className="block md:inline">POWERUPS</span>
+  <span className="block md:inline md:ml-6">AVAILABLE</span>
+</h1>
       {availableCards.length === 0 || isLoading ? (
   
   <div className="flex justify-center w-full -mt-60">

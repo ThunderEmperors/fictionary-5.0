@@ -401,7 +401,7 @@
   );
 
   font-size: 4rem;
-  letter-spacing: 1rem;
+  letter-spacing: 0.08rem;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
