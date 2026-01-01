@@ -332,3 +332,20 @@ html, body {
     font-size: 15px;
   }
 }
+/* ==============================
+   QUESTION METADATA (RESTORED)
+============================== */
+.question-meta {
+  margin-top: 18px;
+  padding-top: 12px;
+
+  font-family: "Cascadia Code", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: #9cffc0;
+  text-align: center;
+
+  border-top: 1px dashed rgba(0, 255, 102, 0.4);
+  text-shadow: 0 0 6px rgba(0, 255, 102, 0.6);
+}

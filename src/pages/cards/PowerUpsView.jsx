@@ -78,8 +78,6 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
           onCardRedeemed(card.desc);
         }
       });
-
-    setIsClicked(!isClicked);
   };
 
   useEffect(() => {
@@ -105,7 +103,8 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
 
  <div className="flex flex-col items-center gap-1">
   {/* CARD */}
-  <div className="relative w-[280px] h-[420px]">
+  <div className="relative w-[280px] h-[420px]"
+    onClick={handleClick}>
     <img
       src={ui.bg}
       alt={ui.title}

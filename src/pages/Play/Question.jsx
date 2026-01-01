@@ -43,6 +43,15 @@ const Question = () => {
     question: {
       text: "Loading...",
       round: 0,
+      ogmedia: "",
+      year: 0,
+      country: "",
+      language: "",
+      show_country: false,
+      show_media: false,
+      show_language: false,
+      show_year: false,
+      media: " ",
     },
     loaded: true,
   });
@@ -106,6 +115,8 @@ const Question = () => {
         return res.json();
       })
       .then((res) => {
+        if (!res) return;
+
         if (res.game_not_live) {
           setGameLive(false);
           navigate("/?redirected=true");
@@ -210,6 +221,22 @@ const Question = () => {
                   <button className="sci-btn" onClick={checkAnswer}>
                     SUBMIT
                   </button>
+                </div>
+
+                {/* ✅ RESTORED METADATA UI (EXACT BEHAVIOR) */}
+                <div className="question-meta">
+                  {state.question.show_country && (
+                    <>Country: {state.question.country}<br /></>
+                  )}
+                  {state.question.show_media && (
+                    <>Original Media: {state.question.ogmedia}<br /></>
+                  )}
+                  {state.question.show_language && (
+                    <>Language: {state.question.language}<br /></>
+                  )}
+                  {state.question.show_year && (
+                    <>Year: {state.question.year}</>
+                  )}
                 </div>
               </>
             ) : (
