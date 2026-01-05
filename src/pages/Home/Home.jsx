@@ -74,16 +74,7 @@ const Home = () => {
 
   return (
     <div className="home-bg" style={{ backgroundImage: `url(${bg})` }}>
-      {/* Fireflies background */}
-      <div className="fireflies-layer">
-        <Fireflies
-          count={140}
-          color="#00e6e6"
-          speed={0.4}
-          size={3}
-          blur={2}
-        />
-      </div>
+      
 
       {/* 🔒 HARD CENTER LOCK */}
       <div className="home-center">
