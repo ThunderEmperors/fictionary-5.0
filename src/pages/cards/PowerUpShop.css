@@ -364,16 +364,16 @@
   padding: 5px;
   color: #4ddc0a;
 
-  transform: translateY(100%);
-  opacity: 0;
-
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.card-wrapper:hover .card-info {
-  transform: translateY(-10px);
+  transform: translateY(20px);
   opacity: 1;
+
+  /* transition: transform 0.3s ease, opacity 0.3s ease; */
 }
+
+/* .card-wrapper:hover .card-info {
+  transform: translateY(20px);
+  opacity: 1;
+} */
 
 @media (max-width: 768px) {
   .card-info {

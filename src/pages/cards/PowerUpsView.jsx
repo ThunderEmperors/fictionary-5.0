@@ -114,17 +114,19 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
       className={`w-full h-full object-contain card-float ${ui.glow}`}
       draggable={false}
     />
-
-    {/* DESCRIPTION PANEL (MUST BE INSIDE) */}
+{/* DESCRIPTION PANEL (MUST BE INSIDE) */}
     <div className="card-info text-center ">
       <p>{card.desc}</p>
-  
 
-  {/* COINS */}
-  <div className="text-[1rem] font-bold font-cd1 text-center text-green-100 mt-0">
-    Coins: {card.coins}
-  </div>  </div>
   </div>
+   
+   {/* COINS */}
+  <div className="text-[1rem] font-bold font-cd1 text-center text-green-100 mt-5">
+    Coins: {card.coins}
+  </div> 
+   
+  </div>
+  
 </div>
 
   );

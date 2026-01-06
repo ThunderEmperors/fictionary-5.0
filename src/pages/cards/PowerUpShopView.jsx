@@ -120,8 +120,8 @@ const PowerUpShopView = ({ card, refreshUpdateState }) => {
       className={`w-full h-full object-contain card-float ${ui.glow}`}
       draggable={false}
     />
-
-    {/* DESCRIPTION PANEL (MUST BE INSIDE) */}
+    
+         {/* DESCRIPTION PANEL (MUST BE INSIDE) */}
     <div className="card-info text-center ">
       <p>{card.desc}</p>
   
