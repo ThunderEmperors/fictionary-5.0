@@ -32,7 +32,7 @@ const QuestionTextRenderer = ({ text }) => {
 
   return (
     <p
-      className="question-text"
+      className="question-text text-[0.8rem] md:text-[14px] lg:text-[18px]"
       dangerouslySetInnerHTML={{ __html: text }}
     />
   );
@@ -183,10 +183,6 @@ const Question = () => {
 
   useEffect(() => {
     getQuestion();
-    if (gameLive) {
-      const introTimer = setTimeout(() => setShowIntro(false), 4000);
-      return () => clearTimeout(introTimer);
-    }
   }, [context.token, gameLive]);
 
   return (
@@ -195,9 +191,11 @@ const Question = () => {
         <HintModal open={hintModalOpen} onClose={() => setHintModalOpen(false)} />
         <SnackBar {...snackbarOptions} />
 
-        {!showIntro && (
+
+
+        {!state.loaded ? (<ColorRing colors={['#18230F','#27391C','#000000','#18230F','#27391C']} height="130" width="130" visible />) : ( 
           <div className="arcade-screen sci-question-box">
-            {state.loaded ? (
+            {state.question.round < 10 ? (
               <>
                 <div className="round-parallelogram">
                   ROUND {state.question.round}
@@ -206,7 +204,7 @@ const Question = () => {
                 <QuestionTextRenderer text={state.question.text} />
 
                 <input
-                  className="answer-input"
+                  className="answer-input text-[0.8rem] md:text-[14px] lg:text-[14px]"
                   id="answerInput"
                   type="text"
                   placeholder="TYPE ANSWER"
@@ -217,7 +215,7 @@ const Question = () => {
 
                 <div className="controls">
                   <button
-                    className={`sci-btn ${
+                    className={`sci-btn  ${
                       hintCountdown !== null || !hintAvailable ? "disabled" : ""
                     }`}
                     onClick={
@@ -249,8 +247,19 @@ const Question = () => {
                 </div>
               </>
             ) : (
-              <ColorRing height="130" width="130" visible />
-            )}
+              <>
+                <div className="thank-you-message text-center text-white">
+                  <h2 className="text-3l font-bold">
+                    Thank you for playing!
+                  </h2>
+                  <p className="text-xl mt-4">
+                    The next round begins in <span className="text-red-500 font-bold">few hours</span> <br/> Stay Tuned-see you then!
+                  </p>
+                </div>
+              
+              </>
+              )
+              }
           </div>
         )}
       </div>

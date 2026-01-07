@@ -213,11 +213,7 @@ const Updates = () => {
                 ariaLabel="loading"
                 wrapperClass="spinner"
                 colors={[
-                  "#10b981",
-                  "#34d399",
-                  "#6ee7b7",
-                  "#22c55e",
-                  "#a7f3d0",
+'#18230F','#27391C','#000000','#18230F','#27391C'
                 ]}
               />
             </div>

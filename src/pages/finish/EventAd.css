@@ -1,0 +1,378 @@
+/* ============================= */
+/* FONTS                         */
+/* ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap');
+
+/* ============================= */
+/* COLOR SYSTEM                  */
+/* ============================= */
+:root {
+  --neon-green: #00ff66;
+  --neon-green-soft: rgba(0, 255, 102, 0.6);
+  --neon-green-dim: rgba(0, 255, 102, 0.25);
+}
+
+/* ============================= */
+/* GLOBAL RESET                  */
+/* ============================= */
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* ============================= */
+/* BACKGROUND                    */
+/* ============================= */
+.arcadeBackground {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Depth overlay */
+.overlay-background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 102, 0.15),
+    rgba(0, 0, 0, 0.85)
+  );
+  z-index: 0;
+}
+
+/* ============================= */
+/* CONTENT WRAPPER               */
+/* ============================= */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+/* ============================= */
+/* TITLES                        */
+/* ============================= */
+.title-main {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.7rem);
+  letter-spacing: 0.22em;
+  opacity: 0.9;
+  color: #ffffff;
+
+  margin-bottom: 1.2rem; /* SPACE BELOW GAME OVER */
+
+  text-shadow:
+    0 0 10px var(--neon-green),
+    0 0 22px var(--neon-green-soft);
+
+  animation: greenFlicker 1.8s infinite;
+}
+
+.title-sub {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  letter-spacing: 0.32em;
+  opacity: 0.7;
+
+  margin-bottom: 1.6rem; /* SPACE BELOW UPCOMING EVENT */
+}
+
+.title-event {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.4rem, 7vw, 3.2rem); /* FIXED clamp */
+  letter-spacing: 0.18em;
+  color: #ffffff;
+
+  margin-bottom: 2rem; /* SPACE BEFORE BUTTON */
+
+  text-shadow:
+    0 0 10px var(--neon-green),
+    0 0 22px var(--neon-green-soft);
+}
+
+
+/* ============================= */
+/* TEXT EFFECTS                  */
+/* ============================= */
+.glowText {
+  color: var(--neon-green);
+  text-shadow:
+    0 0 10px var(--neon-green),
+    0 0 22px var(--neon-green-soft);
+}
+
+/* Flicker (subtle) */
+.flicker {
+  animation: flicker 2.2s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; }
+}
+
+/* ============================= */
+/* BUTTON                        */
+/* ============================= */
+.register-btn {
+  background: #000;
+  color: #ffffff;
+
+  padding: 16px 38px;
+  border-radius: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  border: 1.5px solid rgba(0, 255, 102, 0.8);
+
+  box-shadow:
+    0 0 18px rgba(0, 255, 102, 0.7),
+    inset 0 0 10px rgba(0, 0, 0, 1);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.register-btn:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 28px rgba(0, 255, 102, 1),
+    0 0 60px rgba(0, 255, 102, 0.8);
+}
+
+/* ============================= */
+/* STARS / PARTICLES             */
+/* ============================= */
+.stars,
+.floatingStars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stars span,
+.floatingStars span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff, transparent);
+  opacity: 0.75;
+  animation: float 5s infinite ease-in-out;
+}
+
+.stars span:nth-child(1) { top: 20%; left: 10%; }
+.stars span:nth-child(2) { top: 40%; left: 60%; }
+.stars span:nth-child(3) { top: 65%; left: 30%; }
+.stars span:nth-child(4) { top: 80%; left: 80%; }
+.stars span:nth-child(5) { top: 50%; left: 50%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+
+/* ============================= */
+/* HOLOGRAM PANEL                */
+/* ============================= */
+.hologram-panel {
+  position: relative;
+
+  padding: 44px 56px;
+  border-radius: 26px;
+  max-width: 780px;
+  width: calc(100% - 48px);
+
+  /* PURE BLACK PANEL */
+  background: #000000;
+
+  border: 1.5px solid rgba(0, 255, 102, 0.55);
+
+  box-shadow:
+    0 0 28px rgba(0, 255, 102, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 1);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hologram-panel {
+  background: #000;
+  position: relative;
+}
+
+/* inner depth layer */
+.hologram-panel::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 102, 0.08),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+
+.hologram-panel::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background: rgba(0, 255, 102, 0.6);
+  box-shadow: 0 0 8px rgba(0, 255, 102, 0.8);
+}
+
+
+
+
+.hologram-panel::after {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 102, 0.15),
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+
+@media (max-width: 640px) {
+
+  /* PANEL SIZE + POSITION */
+ .hologram-panel {
+  width: 82%;              /* was 88% */
+  max-width: 360px;        /* was 420px */
+  min-height: 380px;       /* was 460px */
+
+  background: #000;
+  border-radius: 20px;
+  border: 1.5px solid rgba(0, 255, 102, 0.6);
+
+  box-shadow:
+    0 0 14px rgba(0, 255, 102, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 1);
+
+  padding: 26px 22px 22px; /* reduced padding */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+
+/* TITLE: GAME OVER */
+.title-main {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.18em;
+  line-height: 1.15;
+
+  margin-bottom: 20px;   /* tighter */
+  margin-top: 0;
+
+  text-shadow:
+    0 0 6px rgba(0, 255, 102, 0.6);
+}
+
+/* SUBTITLE: UPCOMING EVENT */
+.title-sub {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.3em;
+  opacity: 0.65;
+
+  margin-top: 0;
+  margin-bottom: 22px;   /* was too large */
+}
+
+/* EVENT NAME */
+.title-event {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+
+  margin-top: 0;
+  margin-bottom: 28px;   /* tighter */
+
+  padding-top: 0;        /* IMPORTANT: remove this */
+  text-shadow:
+    0 0 6px rgba(0, 255, 102, 0.65);
+}
+
+  /* REGISTER BUTTON */
+  .register-btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    margin-top: auto; /* anchors button lower */
+    margin-bottom: 12px;
+  
+
+
+  }
+
+}
+
+@media (max-width: 640px) {
+  .hologram-panel {
+    width: 88%;
+    min-height: 420px;   /* 👈 makes it longer */
+    padding: 34px 24px; /* more vertical air */
+    border-radius: 20px;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .register-btn {
+    margin-top: auto;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .hologram-panel {
+    width: 88%;
+    padding: 26px 22px;
+    border-radius: 18px;
+    box-shadow:
+      0 0 18px rgba(0, 255, 102, 0.5);
+  }
+}
+
+
+@media (max-width: 640px) {
+  .hologram-panel {
+    padding: 32px 24px;
+  }
+
+  .title-event {
+    letter-spacing: 0.18em;
+  }
+}
+
+
+

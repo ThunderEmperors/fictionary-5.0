@@ -45,7 +45,7 @@ const Leaderboard = () => {
 
       <div className="podium-wrapper">
         {loading ? (
-          <ColorRing height="120" width="120" />
+          <></>
         ) : (
           <div className="podium">
 
