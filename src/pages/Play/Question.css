@@ -119,7 +119,6 @@ html, body {
   box-shadow:
     0 0 20px rgb(0, 255, 102),
     0 0 50px hwb(144 0% 0% / 0.85);
-
   text-align: center;
   transform: translateY(-30px);
 
@@ -152,7 +151,6 @@ html, body {
 .question-text {
   font-family: "Cascadia Code", monospace;
   color: #c8ffdd;
-  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 18px;
 
@@ -172,7 +170,6 @@ html, body {
 
   padding: 12px;
   font-family: "Cascadia Code", monospace;
-  font-size: 14px;
 
   background: rgba(0, 0, 0, 0.85);
   color: #00ff66;
@@ -198,13 +195,13 @@ html, body {
 ============================== */
 .sci-btn {
   font-family: 'Technopath';
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 
   background: linear-gradient(180deg, #004f20, #002b12);
   color: #00ff66;
 
-  padding: 10px 28px;
-  font-size: 14px;
+  padding: 10px 6px;
+  /* font-size: 14px; */
 
   border: 2px solid #00ff66;
   clip-path: polygon(0% 0%, 94% 0%, 100% 100%, 6% 100%);

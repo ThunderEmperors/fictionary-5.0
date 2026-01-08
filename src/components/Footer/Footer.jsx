@@ -2,6 +2,7 @@ import React from "react";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import styles from "./Footer.module.css";
 
@@ -46,6 +47,16 @@ const SocialLinks = () => {
 >
   <img src={logo} alt="ds-logo" />
 </a>
+
+      <a
+        href="https://chat.whatsapp.com/BlUYd2SoQxZKda7saRGAyS"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles["social-icon"]}
+      >
+        <WhatsAppIcon style={{ color: "#75B06F" }} /> 
+      </a>
+
       <a
         href="https://www.linkedin.com/company/debating-society-nit-durgapur/people/"
         target="_blank"
