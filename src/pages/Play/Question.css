@@ -195,13 +195,11 @@ html, body {
 ============================== */
 .sci-btn {
   font-family: 'Technopath';
-  /* letter-spacing: 2px; */
 
   background: linear-gradient(180deg, #004f20, #002b12);
   color: #00ff66;
 
   padding: 10px 6px;
-  /* font-size: 14px; */
 
   border: 2px solid #00ff66;
   clip-path: polygon(0% 0%, 94% 0%, 100% 100%, 6% 100%);
@@ -228,16 +226,77 @@ html, body {
   text-shadow: 0 0 6px rgba(0, 255, 102, 0.6);
 }
 
-/* ======================================================
-   ✅ ONLY ADDITION — HINT COUNTDOWN SUPPORT
-====================================================== */
-
+/* ==============================
+   HINT COUNTDOWN
+============================== */
 .hint-countdown {
   margin-top: 14px;
   font-family: 'Technopath';
   font-size: 14px;
   letter-spacing: 1px;
 
-  color: #ffffff; /* ✅ PURE WHITE */
+  color: #ffffff;
   text-shadow: 0 0 10px rgba(0, 255, 102, 0.9);
+}
+
+/* ======================================================
+   ✅ STRICTLY ADDITIVE FIXES (WORKING)
+====================================================== */
+
+/* Prevent box over-expansion */
+.sci-question-box {
+  width: min(82%, 760px);
+  padding: clamp(18px, 2.8vw, 28px) clamp(20px, 3.5vw, 40px);
+}
+
+/* Compact text scaling */
+.round-parallelogram {
+  font-size: clamp(18px, 2.2vw, 25px);
+}
+
+.question-text {
+  font-size: clamp(14px, 2.1vw, 16px);
+}
+
+.question-meta {
+  font-size: clamp(11px, 2vw, 13px);
+}
+
+/* Input doesn't stretch */
+.answer-input {
+  width: min(70%, 420px);
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+/* Controls wrap only when forced */
+.controls {
+  flex-wrap: wrap;
+  gap: clamp(14px, 2.5vw, 28px);
+}
+
+/* Buttons stay compact */
+.sci-btn {
+  padding: clamp(8px, 1.8vw, 10px) clamp(12px, 2.4vw, 18px);
+  font-size: clamp(12px, 2vw, 14px);
+  white-space: nowrap;
+}
+
+/* 🔑 MAIN FIX — Reduce Hint ↔ Submit Distance */
+.hint-countdown {
+  margin-top: clamp(6px, 1.2vw, 14px);
+}
+
+.controls {
+  margin-top: clamp(10px, 1.8vw, 26px);
+}
+
+/* Emergency mobile only */
+@media (max-width: 480px) {
+  .sci-question-box {
+    transform: none;
+  }
+
+  .controls {
+    justify-content: space-between;
+  }
 }

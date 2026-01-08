@@ -1,12 +1,13 @@
 /* ===============================
-   RESET
+   RESET (LOCK SCROLL)
 ================================ */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
+  overscroll-behavior: none;
   background: black;
   font-family: "OrbitronSoft", sans-serif;
 }
@@ -21,9 +22,10 @@ html, body {
 .home-bg {
   position: relative;
   width: 100%;
-  height: 100svh;
+  height: 100dvh;
+  min-height: 100dvh;
   background-size: cover;
-  background-position: center 60%;
+  background-position: center 55%;
   overflow: hidden;
 }
 
@@ -38,45 +40,47 @@ html, body {
 }
 
 /* ===============================
-   CENTER STACK
+   CENTER STACK (BALANCED)
 ================================ */
 .home-center {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 2;
+
+  height: 100%;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* 👈 KEY FIX */
+  justify-content: flex-start;
 
-  gap: 2vh;
-  padding-top: 8vh;    /* title + character */
-  padding-bottom: 10vh; /* icons + play */
+  padding-top: 6vh;     /* top breathing space */
+  padding-bottom: 6vh;
+
   text-align: center;
 }
 
-
 /* ===============================
-   CHARACTER
+   CHARACTER (TOP)
 ================================ */
 .character-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  margin-bottom: 4vh;
 }
 
 .character-sprite {
-  width: 10vh;
-  height: 10vh;
-  max-width: 80px;
-  max-height: 80px;
+  width: 11vh;
+  height: 11vh;
+  max-width: 90px;
+  max-height: 90px;
   image-rendering: pixelated;
 }
 
 .speech-bubble {
-  font-size: 1.6vh;
+  font-size: 1.4vh;
   padding: 4px 8px;
   border: 2px solid #00ffee;
   background: rgba(0,0,0,0.8);
@@ -85,30 +89,23 @@ html, body {
 }
 
 /* ===============================
-   TITLE
+   TITLE (CENTERED BLOCK)
 ================================ */
 .sign {
   font-family: "Technopath";
   color: #eaffff;
 
-  /* Size logic stays */
-  font-size: clamp(40px, 8vmin, 120px);
-  letter-spacing: clamp(2px, 0.9vmin, 10px);
-
+  font-size: clamp(52px, 9.5vmin, 150px);
+  letter-spacing: clamp(3px, 1vmin, 12px);
   line-height: 1;
+
+  margin-bottom: 24vh;   /* even spacing */
   white-space: nowrap;
 
-  /* Layout safety */
-  max-width: 92vw;
-  margin: 0 auto;
+  max-width: 94vw;
   padding: 0 3vw;
-
   text-align: center;
 
-  /* ❌ REMOVE overflow hidden */
-  overflow: visible;
-
-  /* Glow */
   text-shadow:
     0 0 6px rgba(0,255,255,0.9),
     0 0 20px rgba(0,255,255,0.8),
@@ -116,19 +113,17 @@ html, body {
     0 0 80px rgba(0,255,255,0.25);
 }
 
-
-
 /* ===============================
-   BUTTON
+   SIGN IN BUTTON
 ================================ */
 .play {
-  
-  margin-top: 6vh;   /* adjust: 1.5vh – 3vh */
-font-family: "OrbitronSoft", sans-serif;
-  font-size: clamp(14px, 3.5vw, 18px);
+  font-family: "OrbitronSoft", sans-serif;
+  font-size: clamp(13px, 3vw, 16px);
   font-weight: 600;
   letter-spacing: 1px;
-  padding: clamp(12px, 1.8vh, 18px) clamp(28px, 5vw, 56px);
+
+  padding: 10px 36px;
+  margin-bottom: 01vh;   /* symmetric gap */
 
   border: 2px solid #00ffee;
   background: rgba(0,40,40,0.9);
@@ -137,7 +132,7 @@ font-family: "OrbitronSoft", sans-serif;
   cursor: pointer;
 
   box-shadow:
-    0 0 12px rgba(0,255,255,0.6),
+    0 0 10px rgba(0,255,255,0.5),
     inset 0 0 6px rgba(0,255,255,0.4);
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -146,145 +141,269 @@ font-family: "OrbitronSoft", sans-serif;
 .play:hover {
   transform: scale(1.05);
   box-shadow:
-    0 0 24px rgba(0,255,255,1),
+    0 0 22px rgba(0,255,255,1),
     inset 0 0 10px rgba(0,255,255,0.8);
 }
 
-
-.play:hover {
-  box-shadow: 0 0 32px rgba(0,255,255,1);
-}
-
 /* ===============================
-   FOOTER
+   SOCIAL ICONS (CENTERED)
 ================================ */
-
-
 .social-center {
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.social-center > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 
 .footer {
   display: flex;
-  gap: clamp(14px, 4vw, 28px);
+  gap: 26px;
 }
 
 .footer a {
-  width: clamp(44px, 7vw, 58px);
-  height: clamp(44px, 7vw, 58px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 14px;
-
-  /* 🔥 CHANGE HERE */
-  background: rgba(0, 0, 0, 0.9);   /* solid black */
-  /* 🔥 CHANGE HERE */
-
-  border: 1.5px solid var(--spectral-dim);
-
-  box-shadow:
-    0 0 10px var(--spectral-dim),
-    inset 0 0 8px rgba(0,0,0,0.9);
-
-  transition: all 0.25s ease;
-}
-
-
-.footer a:hover {
-  transform: scale(1.15);
-  box-shadow:
-    0 0 24px rgba(0,255,255,1);
-}
-/* FORCE BLACK BACKGROUND FOR SOCIAL ICONS */
-.social-center a {
-  background: #000 !important;
-  border-radius: 14px;
-}
-.social-center a {
-  width: clamp(44px, 48px, 56px);
-  height: clamp(44px, 48px, 56px);
+  width: 64px;
+  height: 64px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   background: #000;
-  border-radius: 14px;
+  border-radius: 16px;
+  border: 2px solid rgba(0,255,255,0.5);
+
+  box-shadow:
+    0 0 14px rgba(0,255,255,0.5),
+    inset 0 0 8px rgba(0,0,0,0.9);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ===== VERY SMALL PHONES (iPhone SE, 280–320px) ===== */
+.footer a:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 26px rgba(0,255,255,1);
+}
+
+
+
+
+
+/* ===============================
+   MOBILE TUNING
+================================ */
 @media (max-width: 360px) {
   .sign {
-    font-size: 26px;
-    letter-spacing: 1px;
-    padding: 0;
+    font-size: 38px;
+    margin-bottom: 2.5vh;
   }
 
-  .play {
-    margin-top: 2.5vh;
-  }
-
-  .social-center {
-    margin-top: -2vh;
+  .footer a {
+    width: 56px;
+    height: 56px;
   }
 }
 
-/* ===== SMALL PHONES (Pixel, iPhone Mini) ===== */
-@media (min-width: 361px) and (max-width: 390px) {
+@media (min-width: 361px) and (max-width: 430px) {
   .sign {
-    font-size: clamp(28px, 8vw, 36px);
-    letter-spacing: 2px;
+    font-size: clamp(42px, 10vw, 60px);
   }
 }
 
-/* ===== MEDIUM PHONES (XR, 12, Android large) ===== */
-@media (min-width: 391px) and (max-width: 430px) {
-  .sign {
-    font-size: clamp(32px, 8vw, 44px);
-    letter-spacing: 3px;
-  }
-}
-
-/* ===== LARGE PHONES + TABLETS ===== */
 @media (min-width: 431px) {
   .sign {
-    font-size: clamp(42px, 9vw, 104px);
-    letter-spacing: clamp(3px, 1.2vw, 10px);
+    font-size: clamp(64px, 10vw, 150px);
   }
 }
-/* ===============================
-   FORCE ORDER IN HOME CENTER
-================================ */
 
-.character-container {
-  order: 1;
+/* =========================================
+   ULTRA SMALL DEVICES (320px & BELOW)
+   FULL MANUAL POSITION CONTROL
+========================================= */
+/* =========================================
+   320px EXACT FIX (EVEN + CENTERED)
+========================================= */
+@media (max-width: 320px) {
+
+  /* Lock viewport */
+  html, body {
+    overflow: hidden !important;
+  }
+
+  /* CENTER THE WHOLE STACK */
+  .home-center {
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: center;     /* 🔥 key fix */
+  }
+
+  /* MASCOT */
+  .character-container {
+    margin-bottom: 16px;         /* px, not vh */
+  }
+
+  .character-sprite {
+    width: 64px;
+    height: 64px;
+  }
+
+  .speech-bubble {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  /* TITLE */
+  .sign {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 1.05;
+
+    margin-bottom: 1px;        /* px spacing */
+    white-space: normal;
+    padding: 0 8px;
+  }
+
+  /* BUTTON */
+  .play {
+    font-size: 13px;
+    padding: 7px 22px;
+    margin-bottom: 18px;
+  }
+
+  /* ICONS */
+  .footer {
+    gap: 16px;
+  }
+
+  .footer a {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .footer svg,
+  .footer img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
-.sign {
-  order: 2;
+/* =========================================
+   FIX FOR 321px – 360px (EVEN & BALANCED)
+========================================= */
+@media (min-width: 319px) and (max-width: 360px) {
+
+  /* Center the whole stack */
+  .home-center {
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: center;   /* 🔥 key fix */
+  }
+
+  /* Mascot spacing */
+  .character-container {
+    margin-bottom: 50px;
+  }
+
+  .character-sprite {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* Title */
+  .sign {
+    font-size: 34px;
+    letter-spacing: 1.5px;
+    line-height: 1.05;
+
+    margin-bottom: 80px;      /* px, not vh */
+    white-space: normal;
+    padding: 0 10px;
+  }
+
+  /* Button */
+  .play {
+    font-size: 14px;
+    padding: 8px 26px;
+    margin-bottom: 20px;
+  }
+
+  /* Icons */
+  .footer {
+    gap: 18px;
+  }
+
+  .footer a {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+
+  .footer svg,
+  .footer img {
+    width: 22px;
+    height: 22px;
+  }
 }
 
-.social-center {
-  order: 3;
+
+/* =========================================
+   FIX FOR 360px – 600px (CORE MOBILE RANGE)
+   Proper order • No overflow • Even layout
+========================================= */
+@media (min-width: 360px) and (max-width: 600px) {
+
+  /* Center the whole vertical stack */
+  .home-center {
+    justify-content: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+
+  /* Mascot */
+  .character-container {
+    margin-bottom: 50px;
+  }
+
+  .character-sprite {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* 🔥 TITLE — FIXED POSITION + NO OVERFLOW */
+  .sign {
+    font-size: clamp(36px, 8vw, 56px);
+    line-height: 1.1;
+    letter-spacing: 2px;
+
+    margin: 16px 0 75px 0;   /* BETWEEN mascot & button */
+    white-space: normal;    /* 🔥 allow wrap */
+    word-break: break-word; /* 🔥 prevent overflow */
+    max-width: 90vw;        /* 🔥 hard cap */
+    padding: 0 12px;
+  }
+
+  /* SIGN IN button */
+  .play {
+    margin-bottom: 30px;
+    padding: 9px 30px;
+    font-size: 14px;
+  }
+
+  /* Social icons */
+  .footer {
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .footer a {
+    width: 54px;
+    height: 54px;
+  }
+
+  .footer svg,
+  .footer img {
+    width: 22px;
+    height: 22px;
+  }
 }
 
-.play {
-  order: 4;
-  margin-top: 3vh; /* spacing below icons */
-}
-.social-center {
-  margin-top: 16vh;   /* 👈 pushes icons DOWN */
-}

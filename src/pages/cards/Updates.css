@@ -151,7 +151,7 @@
 
 .updates-page::after {
   background-size: 42px 42px;
-  animation-duration: 500s;
+  animation-duration: 30s;
   opacity: 0.4;
   filter: blur(0.8px);
 }
