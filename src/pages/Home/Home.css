@@ -122,7 +122,7 @@ html, body {
 .play {
   
   margin-top: 6vh;   /* adjust: 1.5vh – 3vh */
-font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+font-family: "OrbitronSoft", sans-serif;
   font-size: clamp(14px, 3.5vw, 18px);
   font-weight: 600;
   letter-spacing: 1px;
