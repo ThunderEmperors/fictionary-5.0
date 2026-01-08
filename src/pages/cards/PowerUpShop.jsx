@@ -77,8 +77,7 @@ const PowerUpShop = () => {
  return (
   <div className="shop-page-wrapper">
     <div className="shop-page">
-      
-      {/* FIXED BACKGROUND */}
+     
       <div className="shop-bg">
         <img
           src={bgps9}
@@ -88,7 +87,7 @@ const PowerUpShop = () => {
         />
       </div>
 
-      {/* SCROLLABLE CONTENT */}
+   
       <div className="shop-content">
         <h1 className="xl:text-15xl sm:text-6xl md:text-8xl lg:text-13xl
                        multiverse-title metallic-text
