@@ -26,12 +26,9 @@ const GameFinished = () => {
           GAME OVER
         </h1>
 
-        <h2 className="title-sub font-pixel glowText">
-          UPCOMING EVENT
-        </h2>
 
         <h2 className="title-event font-pixel">
-          REVERBRATE!
+          AUDITIONS COMING SOON!
         </h2>
 
         <a

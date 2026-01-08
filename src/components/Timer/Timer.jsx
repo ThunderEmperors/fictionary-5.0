@@ -55,20 +55,17 @@ const Timer = ({ timer, refresh }) => {
     <>
       <div className={styles.clock}>
         <div className={styles.element}>
-          <p>{time.days}</p>
+          <p>{time.days}:</p>
           <span>Days</span>
         </div>
-        <span>:</span>
         <div className={styles.element}>
-          <p>{time.hours}</p>
+          <p>{time.hours}:</p>
           <span>Hours</span>
         </div>
-        <span>:</span>
         <div className={styles.element}>
-          <p>{time.minutes}</p>
+          <p>{time.minutes}:</p>
           <span>Minutes</span>
         </div>
-        <span>:</span>
         <div className={styles.element}>
           <p>{time.seconds}</p>
           <span>Seconds</span>

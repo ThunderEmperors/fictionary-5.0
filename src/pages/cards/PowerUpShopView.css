@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap');
+
 body {
   overflow-y: auto;
   overflow-x: hidden;
@@ -5,13 +8,13 @@ body {
   min-height: 100vh;
 }
 
-.cards {
+/* .cards {
   font-family: 'Orbitron', sans-serif;
-}
+} */
 
-.font-expo {
+/* .font-expo {
   font-family: 'Exo 2', sans-serif;
-}
+} */
 
 
 
@@ -69,6 +72,10 @@ body {
 
 .glow-orange {
   filter: drop-shadow(0 0 8px #ff9f3f);
+}
+
+.card-desc{
+    font-family: 'Orbitron', sans-serif;
 }
 
 .card-info {

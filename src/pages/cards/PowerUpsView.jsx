@@ -116,7 +116,7 @@ const PowerUpsViews = ({ card, refreshUpdateState, onCardRedeemed }) => {
     />
 {/* DESCRIPTION PANEL (MUST BE INSIDE) */}
     <div className="card-info text-center ">
-      <p>{card.desc}</p>
+      <p className="card-desc">{card.desc}</p>
 
   </div>
    

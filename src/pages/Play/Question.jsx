@@ -195,7 +195,7 @@ const Question = () => {
 
         {!state.loaded ? (<ColorRing colors={['#18230F','#27391C','#000000','#18230F','#27391C']} height="130" width="130" visible />) : ( 
           <div className="arcade-screen sci-question-box">
-            {state.question.round < 10 ? (
+            {state.question.round < 13 ? (
               <>
                 <div className="round-parallelogram">
                   ROUND {state.question.round}
@@ -253,7 +253,7 @@ const Question = () => {
                     Thank you for playing!
                   </h2>
                   <p className="text-xl mt-4">
-                    The next round begins in <span className="text-red-500 font-bold">few hours</span> <br/> Stay Tuned-see you then!
+                    The next round begins in <span className="text-red-500 font-bold">few hours</span> <br/> Stay Tuned - see you then!
                   </p>
                 </div>
               

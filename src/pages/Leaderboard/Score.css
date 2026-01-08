@@ -23,6 +23,10 @@
   border: 1px solid rgba(34, 30, 30, 0.2); 
 }
 
+.scores{
+  font-weight: 700;
+}
+
 .first-place {
   width: 90%;
   font-size: 6rem; 

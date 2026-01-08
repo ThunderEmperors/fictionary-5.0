@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap');
+
+
 body{
     overflow-y: auto;
   }
@@ -6,6 +9,10 @@ body{
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
+.card-desc{
+    font-family: 'Orbitron', sans-serif;
+
+}
 
 .card-hover:hover {
   transform: scale(1.08);
