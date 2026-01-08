@@ -368,6 +368,8 @@ animation: borderFlicker 2.8s infinite steps(1, end);
    📝 SUBTITLE
    =========================================================== */
 .updates-subtitle {
+  font-family: 'Megatech2';
+  src: url('/assets/Megatech(2).ttf') format('truetype');
   display: block;
   margin-top: 3px;
   max-width: 640px;
@@ -482,6 +484,8 @@ animation: borderFlicker 2.8s infinite steps(1, end);
    🧾 SCORE UPDATE CARD
    =========================================================== */
 .scoreUpdate {
+  font-family: 'Megatech2';
+  src: url('/assets/Megatech(2).ttf') format('truetype');
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -542,6 +546,8 @@ animation: borderFlicker 2.8s infinite steps(1, end);
 .scoreUpdate .player {
   font-weight: 600;
   color: #6efff2;
+  font-family: 'Megatech2';
+  src: url('/assets/Megatech(2).ttf') format('truetype');
 
   text-shadow:
     0 0 6px rgba(110, 255, 242, 0.85),
@@ -556,7 +562,8 @@ animation: borderFlicker 2.8s infinite steps(1, end);
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Orbitron', sans-serif;
+ font-family: 'Megatech2';
+  src: url('/assets/Megatech(2).ttf') format('truetype');
 }
 
 .points.increase {
